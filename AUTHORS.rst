@@ -2,4 +2,4 @@
 Contributors
 ============
 
-* Kaju Bubanja <kaju.bubanja@cesag.com>
+* Kaju Bubanja <bubanja.kaju@gmail.com>

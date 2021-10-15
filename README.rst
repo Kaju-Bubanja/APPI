@@ -34,10 +34,7 @@ appi
 ====
 
 
-    Add a short description here!
-
-
-A longer description of your project goes here...
+    This is the project belonging to the APPI course
 
 
 .. _pyscaffold-notes:

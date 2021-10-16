@@ -13,8 +13,12 @@ class Child(Parent):
     def parent_name(self):
         return super().name()
 
+    def __str__(self):
+        return "Super nicely formatted name"
+
 
 c = Child()
 print(c.foo())
 print(c.name())
 print(c.parent_name())
+print(c)

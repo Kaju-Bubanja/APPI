@@ -1,6 +1,6 @@
 # Base class
 class Vehicle:
-    def Vehicle_info(self):
+    def vehicle_info(self):
         print('Inside Vehicle class')
 
 
@@ -14,5 +14,5 @@ class Car(Vehicle):
 car = Car()
 
 # access Vehicle's info using car object
-car.Vehicle_info()
+car.vehicle_info()
 car.car_info()

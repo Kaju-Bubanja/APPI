@@ -15,7 +15,11 @@ class Person:
 
 # create object of a class
 jessa = Person('Jessa', 'Female', 'Software Engineer')
+john = Person('John', 'male', 'Software Engineer')
 
 # call methods
 jessa.show()
 jessa.work()
+john.show()
+john.work()
+

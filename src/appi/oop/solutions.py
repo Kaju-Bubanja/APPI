@@ -41,8 +41,8 @@ class Bus(Vehicle):
     pass
 
 
-School_bus = Bus("School Volvo", 180, 12)
-print("Vehicle Name:", School_bus.name, "Speed:", School_bus.max_speed, "Mileage:", School_bus.mileage)
+school_bus = Bus("School Volvo", 180, 12)
+print(school_bus)
 
 # Expected Output:
 # Vehicle Name: School Volvo Speed: 180 Mileage: 12
@@ -170,8 +170,7 @@ class Vehicle:
 
 class Bus(Vehicle):
     def fare(self):
-        amount = super().fare()
-        amount += amount * 10 / 100
+        amount = super().fare()*1.1
         return amount
 
 

@@ -6,10 +6,12 @@ app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
 
+# return dictionary instead of tuple
 def dict_factory(cursor, row):
     d = {}
-    for idx, col in enumerate(cursor.description):
-        d[col[0]] = row[idx]
+    for idx, description in enumerate(cursor.description):
+        # 0 is the column name
+        d[description[0]] = row[idx]
     return d
 
 
@@ -32,6 +34,11 @@ def api_all():
 @app.errorhandler(404)
 def page_not_found(e):
     return "<h1>404</h1><p>The resource could not be found.</p>", 404
+
+
+@app.route("/api/v1/resources/books/columns")
+def get_columns():
+    return jsonify({"tile": "str", "published": "str", "author": "str"})
 
 
 @app.route('/api/v1/resources/books', methods=['GET'])

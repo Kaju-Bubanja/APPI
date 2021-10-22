@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory</title>
+</head>
+<body style="margin-left: 40px; margin-top: 40px">
+<h1>Welcome to your pet shop inventory program</h1>
+The API is under: /api/v1/resources/animals
+<h2>Add an animal</h2>
+<form action="/add_animal">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" value=""><br>
+    <label for="animal_type">Type:</label><br>
+    <input type="text" id="animal_type" name="animal_type" value=""><br>
+    <label for="name">Age</label><br>
+    <input type="text" id="age" name="age" value=""><br>
+    <label for="price">Price:</label><br>
+    <input type="text" id="price" name="price" value=""><br>
+    <input type="submit" value="Submit">
+</form>
+<h2>List of animals</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Age</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for animal in animals %}
+    <tr>
+        <td>{{ animal.name }}</td>
+        <td>{{ animal.type }}</td>
+        <td>{{ animal.age }}</td>
+        <td>{{ animal.price }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

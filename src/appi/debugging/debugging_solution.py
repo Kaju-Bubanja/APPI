@@ -29,7 +29,10 @@ def main():
             x = input("Enter a first operand")
             if x == "exit":
                 break
-            x = float(x)
+            elif x == "last":
+                x = result
+            else:
+                x = float(x)
             inputed_operator = input(f"Enter an operator. Valid options are {list(ops.keys())}")
             if inputed_operator == "exit":
                 break
@@ -37,7 +40,10 @@ def main():
             y = input("Enter a second operand")
             if y == "exit":
                 break
-            y = float(y)
+            elif y == "last":
+                y = result
+            else:
+                y = float(y)
             result = operation(x, y)
             log.info(f"{x} {inputed_operator} {y} = {result}")
         except ValueError as e:
@@ -47,6 +53,8 @@ def main():
             log.warning("Didn't recognize operator")
         except ZeroDivisionError as e:
             log.warning("Can't divide by zero")
+        except NameError as e:
+            log.warning("Calculator just started and doesn't have a last result")
         except Exception as e:
             log.warning("An unexpected exception happened. Stacktrace follows")
             log.exception(e)

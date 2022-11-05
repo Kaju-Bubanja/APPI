@@ -106,12 +106,10 @@ def get_animals():
     animal_type = query_parameters.get('type')
     age = query_parameters.get('age')
     if age:
-        age = query_parameters.get('age')
         age = age.replace("\'", "\"")
         age = json.loads(age)
     price = query_parameters.get('price')
     if price:
-        price = query_parameters.get('price')
         price = price.replace("\'", "\"")
         price = json.loads(price)
 

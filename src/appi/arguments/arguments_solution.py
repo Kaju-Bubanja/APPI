@@ -22,4 +22,4 @@ def foo(*args, **kwargs):
     return result_string, result_sum
 
 
-print(foo("Hallo ", "World", 42, 10, ["Wow", 3.141], first=" Zürich", second=18, special_arg=["Special Wow", 3]))
+print(foo("Hallo ", "World", 42, 10, ["Wow", 3.141], first=" Zürich", second=18, special_arg=["Special Wow", 3], last=0.333))

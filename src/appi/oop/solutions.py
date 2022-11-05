@@ -34,6 +34,8 @@ class Vehicle:
         self.mileage = mileage
 
     def __str__(self):
+        # return "Name: {name}, Max speed: {max_speed}, Mileage: {mileage}".format(name=self.name, max_speed=self.max_speed, mileage=self.mileage)
+        # return "Name: " + str(self.name) + ", Max speed: " + str(self.max_speed) + ", Mileage: " + str(self.mileage)
         return f"Name: {self.name}, Max speed: {self.max_speed}, Mileage: {self.mileage}"
 
 
@@ -76,15 +78,15 @@ class Bus(Vehicle):
     def seating_capacity(self, capacity=50):
         return super().seating_capacity(capacity)
 
-School_bus = Bus("School Volvo", 180, 12)
-print(School_bus.seating_capacity())
+school_bus = Bus("School Volvo", 180, 12)
+print(school_bus.seating_capacity())
 
 # Expected Output:
 # The seating capacity of a bus is 50 passengers
 
 
 # 5: Define property that should have the same value for every class instance
-# Define a class attribute ”color” with a default value white. I.e., Every Vehicle should be white.
+# Define a class attribute ”color” with a default value white. I.e., Every Vehicle and every Car should be white.
 # Given
 class Vehicle:
 

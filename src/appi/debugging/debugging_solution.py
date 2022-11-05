@@ -2,11 +2,14 @@ import operator
 import time
 from log_handling import setup_logger, close_log_handlers
 
-# 1. Make a simple calculator, where the user is repeatedly asked to enter numbers and operands and the calulator returns the result,
-# until the user enters 'exit'. The calulator should also log all the data inputed and any exceptions which might happen e.g. DivisonByZero, NotANumber
+# Make a simple calculator, where the user is repeatedly asked to enter numbers and operands and the calulator
+# returns  the result,
+# until the user enters 'exit'. The calculator should also log all the data inputted and any exceptions which might
+# happen  e.g. DivisonByZero, NotANumber
 # and still continue to function even though an exception happened
-# Catch 3 specific exceptions and log a sensible message
-# You can use following dictionary to retrieve operators and use the like operator.add(x, y)
+# Catch at least 3 specific exceptions and log a sensible message
+# Allow the user to use the last result by typing "last" instead of a number as an input
+# You can use following dictionary to retrieve operators and use the operator like so operator.add(x, y)
 ops = {
     "+": operator.add,
     "-": operator.sub,
@@ -22,6 +25,7 @@ def main():
     log = setup_logger("calculator.log")
     log.info("Welcome to the simple python calculator")
     log.info("Enter exit at any time to exit the calculator")
+    log.info("Type last to use the last result instead of an operand")
     while True:
         try:
             # Sleep a bit to let the welcome message and the result message reach the outputstream first
@@ -51,7 +55,7 @@ def main():
             log.warning("Couldn't convert input to number")
         except KeyError as e:
             log.warning("Didn't recognize operator")
-        except ZeroDivisionError as e:
+        except ZeroDivisionError:
             log.warning("Can't divide by zero")
         except NameError as e:
             log.warning("Calculator just started and doesn't have a last result")

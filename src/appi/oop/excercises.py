@@ -37,7 +37,7 @@ class Vehicle:
 # The seating capacity of a bus is 50 passengers
 
 # 5: Define property that should have the same value for every class instance
-# Define a class attribute ”color” with a default value white. I.e., Every Vehicle should be white.
+# Define a class attribute ”color” with a default value white. I.e., Every Vehicle and every Car should be white.
 # Given
 class Vehicle:
 

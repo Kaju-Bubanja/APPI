@@ -10,6 +10,9 @@ class Student:
 
 
 s1 = Student("Harry", 12)
+s2 = Student("Jessa", 14)
+print(s1.school_name)
+print(s2.school_name)
 # access instance variables
 print('Student:', s1.name, s1.age)
 
@@ -24,3 +27,5 @@ print('Student:', s1.name, s1.age)
 # Modify class variables
 Student.school_name = 'XYZ School'
 print('School name:', Student.school_name)
+print(s1.school_name)
+print(s2.school_name)

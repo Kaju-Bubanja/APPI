@@ -16,3 +16,7 @@ car = Car()
 # access Vehicle's info using car object
 car.vehicle_info()
 car.car_info()
+print(type(car))
+
+v = Vehicle()
+print(type(v))

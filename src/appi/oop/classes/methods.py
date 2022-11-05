@@ -31,7 +31,7 @@ class Student:
         cls.school_name = new_name
 
     def modify_school_name2(self, new_name):
-        # modify class variable
+        # create instance attribute
         self.school_name = new_name
 
 

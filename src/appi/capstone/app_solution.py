@@ -72,6 +72,10 @@ def delete_animal():
     return index()
 
 
+# price = query_parameters.get('price')
+# price={"gt": 60, "lte”: 100}
+# price = price.replace("\'", "\"")
+# price = json.loads(price)
 def range_filter(input, query, to_filter, name):
     if "lt" in input:
         query += f" {name} < ? AND"
@@ -113,6 +117,9 @@ def get_animals():
         price = price.replace("\'", "\"")
         price = json.loads(price)
 
+    if not (name or animal_type or age or price):
+        return jsonify(get_all_animals())
+
     query = "SELECT * FROM animals WHERE"
     to_filter = []
 
@@ -126,8 +133,6 @@ def get_animals():
         query = range_filter(age, query, to_filter, "age")
     if price:
         query = range_filter(price, query, to_filter, "price")
-    if not (name or animal_type or age or price):
-        return jsonify(get_all_animals())
 
     # cut off the last and
     query = query[:-4] + ';'

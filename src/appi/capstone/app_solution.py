@@ -135,13 +135,12 @@ def get_animals():
         query = range_filter(price, query, to_filter, "price")
 
     # cut off the last and
-    query = query[:-4] + ';'
+    query = query[:-4]
 
     conn = sqlite3.connect(db_name)
     conn.row_factory = dict_factory
-    cur = conn.cursor()
 
-    results = cur.execute(query, to_filter).fetchall()
+    results = conn.execute(query, to_filter).fetchall()
 
     return jsonify(results)
 

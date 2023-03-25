@@ -7,10 +7,8 @@ class Board:
                       3: None, 4: None, 5: None,
                       6: None, 7: None, 8: None}
 
-    # The icon is either X or O or whichever you like
     def update_board(self, choice, player_symbol):
         if not self.tiles[choice]:
-            print(f"updating tile {choice} with symbol {player_symbol}")
             self.tiles[choice] = player_symbol
             return True
         return False
@@ -45,24 +43,26 @@ class Board:
 
 
 class Player:
-    # give the player a constructor which initializes its player_symbol and its name
+    # give the player a constructor which takes the player_symbol and name as arguments
     def __init__(self, player_symbol, name):
         self.name = name
         self.player_symbol = player_symbol
 
     def get_move(self):
-        raise NotImplemented
+        raise NotImplementedError
 
 
 class Human(Player):
+    # create a constructor which initializes the the player symbol and it's name
     def __init__(self):
         super().__init__("X", self.__class__.__name__)
 
     def get_move(self):
-        return int(input("Chose a location between 1-9"))
+        return int(input("Chose a location between 0-8"))
 
 
 class Computer(Player):
+    # create a constructor which initializes the the player symbol and it's name
     def __init__(self):
         super().__init__("O", self.__class__.__name__)
 
@@ -88,7 +88,6 @@ class Game:
         could_update_board = False
         while not could_update_board:
             move = player.get_move()
-            print(f"player {player} did move {move}")
             could_update_board = self.board.update_board(move, player.player_symbol)
 
     def play(self):

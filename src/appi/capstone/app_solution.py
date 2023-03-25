@@ -73,7 +73,7 @@ def delete_animal():
 
 
 # price = query_parameters.get('price')
-# price={"gt": 60, "lte”: 100}
+# price={"gt": 60, "lte": 100}
 # price = price.replace("\'", "\"")
 # price = json.loads(price)
 def range_filter(input, query, to_filter, name):

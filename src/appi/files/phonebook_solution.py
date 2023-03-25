@@ -23,7 +23,10 @@ def main():
             name = input("Input name")
             if name == "exit":
                 break
-            print(address_book_dict[name])
+            try:
+                print(address_book_dict[name])
+            except KeyError:
+                print(f"The user {name} doesn't exist")
     elif mode == "i":
         name_number = {}
         while True:

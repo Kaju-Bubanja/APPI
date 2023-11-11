@@ -7,6 +7,10 @@ class Parent:
 
 
 class Child(Parent):
+
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
     def name(self):
         return "Child"
 
@@ -14,10 +18,10 @@ class Child(Parent):
         return super().name()
 
     def __str__(self):
-        return "Super nicely formatted name"
+        return f"a: {self.a}, b: {self.b}"
 
 
-c = Child()
+c = Child(42, "Hallo world")
 print(c.foo())
 print(c.name())
 print(c.parent_name())

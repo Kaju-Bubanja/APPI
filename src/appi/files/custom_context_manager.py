@@ -6,6 +6,7 @@ class CustomLogger:
     def __init__(self, filename, mode="w"):
         self.filename = filename
         self.mode = mode
+        self.file = None
 
     def __enter__(self):
         self.file = open(self.filename, self.mode)

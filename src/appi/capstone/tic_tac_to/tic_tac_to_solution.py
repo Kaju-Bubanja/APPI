@@ -19,16 +19,17 @@ class Board:
         for i in range(3):
             if tiles[i] == player_symbol and tiles[i + 3] == player_symbol and \
                     tiles[i + 6] == player_symbol:  # check for vertical win
-                return player_symbol
+                return True
             elif tiles[(i * 3)] == player_symbol and tiles[(i * 3) + 1] == player_symbol and \
                     tiles[(i * 3) + 2] == player_symbol:  # check for horizontal win
-                return player_symbol
+                return True
 
         # check for diagonal wins
         if tiles[0] == player_symbol and tiles[4] == player_symbol and tiles[8] == player_symbol:
-            return player_symbol
+            return True
         elif tiles[2] == player_symbol and tiles[4] == player_symbol and tiles[6] == player_symbol:
-            return player_symbol
+            return True
+        return False
 
     def board_is_full(self):
         for value in self.tiles.values():

@@ -36,6 +36,11 @@ class Vehicle:
 # Expected Output:
 # The seating capacity of a bus is 50 passengers
 
+
+# 4.1 Make the seating capacity a child specific instance attribute and modify the child seating_capacity method
+# to take no argument, but to take the instance attribute
+
+
 # 5: Define property that should have the same value for every class instance
 # Define a class attribute ”color” with a default value white. I.e., Every Vehicle and every Car should be white.
 # Given

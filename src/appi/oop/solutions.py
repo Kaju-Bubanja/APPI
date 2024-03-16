@@ -84,6 +84,19 @@ print(school_bus.seating_capacity())
 # Expected Output:
 # The seating capacity of a bus is 50 passengers
 
+# 4.1 Make the seating capacity a child specific instance attribute and modify the child seating_capacity method
+# to take no argument, but to take the instance attribute
+class Bus(Vehicle):
+    def __init__(self, name, max_speed, mileage, seats=50):
+        super().__init__(name, max_speed, mileage)
+        self.seats = seats
+
+    def seating_capacity(self):
+        return super().seating_capacity(self.seats)
+
+school_bus = Bus("School Volvo", 180, 12, 77)
+print(school_bus.seating_capacity())
+
 
 # 5: Define property that should have the same value for every class instance
 # Define a class attribute ”color” with a default value white. I.e., Every Vehicle and every Car should be white.

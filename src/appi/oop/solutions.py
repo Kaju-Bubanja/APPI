@@ -174,6 +174,7 @@ class Vehicle:
 
 class Bus(Vehicle):
     def fare(self):
+        # amount = super().fare()+super().fare()*0.1
         amount = super().fare()*1.1
         return amount
 

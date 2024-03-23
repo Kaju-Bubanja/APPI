@@ -60,8 +60,7 @@ def main():
         except NameError as e:
             log.warning("Calculator just started and doesn't have a last result")
         except Exception as e:
-            log.warning("An unexpected exception happened. Stacktrace follows")
-            log.exception(e)
+            log.exception("An unexpected exception happened. Stacktrace follows")
     log.info("Shutting down python calculator")
     close_log_handlers(log)
 

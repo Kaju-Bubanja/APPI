@@ -24,7 +24,7 @@ average2(10, 20)
 
 
 def get_discount(price):
-    price = price*1.9
+    price = price*0.9
     return price
 
 

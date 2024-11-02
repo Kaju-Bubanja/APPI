@@ -20,7 +20,9 @@ def average2(a, b):
 average(10, 20)
 average2(10, 20)
 
-10/0
+a = int(input("enter a number"))
+b = int(input("enter a number"))
+a/b
 
 
 def get_discount(price):

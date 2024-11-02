@@ -1,31 +1,26 @@
-class Student:
-    # class variables
-    school_name = 'ABC School'
+class Car:
+    # Class attribute to keep track of the number of cars created
+    total_cars = 0
+    tires = 4
 
-    # constructor
-    def __init__(self, name, age):
-        # instance variables
-        self.name = name
-        self.age = age
+    def __init__(self, make, color):
+        self.make = make
+        self.color = color
+        Car.total_cars += 1
 
+    @classmethod
+    def reset_counter(cls):
+        cls.total_cars = 0
 
-s1 = Student("Harry", 12)
-s2 = Student("Jessa", 14)
-print(s1.school_name)
-print(s2.school_name)
-# access instance variables
-print('Student:', s1.name, s1.age)
+    @staticmethod
+    def miles_to_km(miles):
+        return miles * 1.60934
 
-# access class variable
-print('School name:', Student.school_name)
+# Creating instances
+car1 = Car("Toyota", "blue")
+car2 = Car("Honda", "yellow")
+car3 = Car("Ford", "white")
 
-# Modify instance variables
-s1.name = 'Jessa'
-s1.age = 14
-print('Student:', s1.name, s1.age)
+# Accessing the class attribute
+print(f"Total cars created: {Car.total_cars}")
 
-# Modify class variables
-Student.school_name = 'XYZ School'
-print('School name:', Student.school_name)
-print(s1.school_name)
-print(s2.school_name)
